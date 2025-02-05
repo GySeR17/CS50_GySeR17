@@ -63,7 +63,19 @@ def get_int(): #Definir funcion //(1)
 main()
 
 #Cs50 David: Indicando que si la variable x en try es solo usada una vez, directamente se podria usar el return para terminar el loop y ademas retornar el valor ingresado Min 4:43:00
-def main():
+#def main():
+  #  x = get_int()
+ #   print(f"x is {x}")
+
+#def get_int():
+    #while True:
+   #     try:
+  #          return int(input("What's x? "))
+ #       except ValueError:
+#            print("Please enter a integer number.")
+#main()
+#CS50 David con pass
+def main2():
     x = get_int()
     print(f"x is {x}")
 
@@ -72,5 +84,17 @@ def get_int():
         try:
             return int(input("What's x? "))
         except ValueError:
-            print("Please enter a integer number.")
-main()
+            pass
+main2()
+#Codigo con un valor agregado de reusabilidad de la pregunta
+def main2():
+    x = get_int("What's x? ") #Hace la pregunta en base al parametro que tomara la funcion ("What's x?" )
+    print(f"x is {x}")
+
+def get_int(prompt): #Definimos el parametro con una variable que podamos reutilizar
+    while True:
+        try:
+            return int(input(prompt)) #Usamos el parametro para que tome el valor en la funcion arriba
+        except ValueError:
+            pass
+main2()
